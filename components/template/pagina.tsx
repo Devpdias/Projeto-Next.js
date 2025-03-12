@@ -11,7 +11,8 @@ export default function Pagina(props: PaginaProps) {
             <Cabecalho />
             <main className={`
             flex-1 w-[1200px] mx-auto 
-            ${props.className ?? ''}py-10`}>{props.children}</main>
+            ${props.className ?? ''}py-10`}>{props.children}
+            </main>
         </div >
     )
 }

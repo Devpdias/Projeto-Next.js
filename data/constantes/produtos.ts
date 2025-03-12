@@ -85,7 +85,7 @@ const produtos: Produto[] = [
         id: 11,
         nome: "Roteador Wi-Fi 6",
         preco: 699.90,
-        descricao: "Eletrônicos",
+        descricao: " Internet ultrarrápida e estável! Com tecnologia Wi-Fi 6 para melhor cobertura, menor latência e maior velocidade, ideal para casas com múltiplos dispositivos conectados.",
         imagem:"https://images.unsplash.com/photo-1621685634155-dcb444e2ec98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJvdGVhZG9yJTIwd2lmaXxlbnwwfHwwfHx8MA%3D%3D",
         estoque: 20
     },
@@ -98,3 +98,5 @@ const produtos: Produto[] = [
         estoque: 30
     }
 ]
+
+export default produtos 

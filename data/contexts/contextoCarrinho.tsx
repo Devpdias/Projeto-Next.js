@@ -12,7 +12,7 @@ interface contextoCarrinhoProps{     /**criada para mostrar quais sao os atribut
 const ContextoCarrinho = createContext<contextoCarrinhoProps>({} as any)
 
 export function ProvedorCarrinho(props: any){
-    const[numero, setNumero] = useState(1007)
+    const[numero, setNumero] = useState(0)
 return <ContextoCarrinho.Provider value={{
     numero,
     incrementar: () => setNumero(numero + 1),
