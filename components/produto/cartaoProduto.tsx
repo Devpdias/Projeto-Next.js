@@ -1,11 +1,15 @@
+import ContextoCarrinho from "@/data/contexts/contextoCarrinho"
+import useCarrinho from "@/data/hooks/useCarrinho"
 import Produto from "@/data/model/produto"
 import Image from 'next/image'
+import { useContext } from "react"
 
 export interface CartaoProdutoprops {
     produto: Produto
 }
 
 export default function CartaoProduto(props: CartaoProdutoprops) {
+    const{adicionar} = useCarrinho()
     const { id, nome, preco, descricao, imagem, estoque } = props.produto
     return (
         <div className="flex flex-col w-72 bg-zinc-900">
@@ -17,7 +21,7 @@ export default function CartaoProduto(props: CartaoProdutoprops) {
                 <p className="flex-1 text-sm text-zinc-400">{descricao}</p>
                 <div className="flex justify-between items-center">
                     <span className="text-lg font-semibold mt-2">{preco.toFixed(2)}</span>
-                    <button className="">Adicionar</button>
+                    <button onClick={() => adicionar(props.produto)} className="border rounded-full px-5 py-1 text-sm">Adicionar</button>
                 </div>
             </div>
         </div>
