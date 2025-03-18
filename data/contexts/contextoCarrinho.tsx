@@ -3,7 +3,6 @@ import { createContext, useEffect } from "react"
 import { useState } from "react"
 import ItemCarrinho from "../model/itemCarrinho"
 import Produto from "../model/produto"
-import { setServers } from "dns"
 import useLocalStorage from "../hooks/localStorage"
 
 interface contextoCarrinhoProps {
@@ -28,7 +27,7 @@ export function ProvedorCarrinho(props: any) {
 
 
     function adicionar(produto: Produto) {
-        const indice = itens.findIndex((i) => i.produto.id === produto.id)/*acha o produto pelo indice */
+        const indice = itens.findIndex((i) => i.produto.id === produto.id)//acha o produto pelo indice 
 
         if (indice === -1) {
             alterarItens([...itens, { produto, quantidade: 1 }])
@@ -47,12 +46,12 @@ export function ProvedorCarrinho(props: any) {
             return i
         })
             .filter((i) => i.quantidade > 0)
-        alterarItens(novosItens)
+        alterarItens(novosItens)//funçao que colocar no localstorage as informaçoes para ficarem salvar
     }
 
     function alterarItens(novosItens: ItemCarrinho[]) {
         setItens(novosItens)
-        set('carrinho', novosItens)
+        set('carrinho', novosItens)//coloca no localstorage as informaçoes
     }
 
     return (

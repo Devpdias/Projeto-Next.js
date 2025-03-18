@@ -1,7 +1,6 @@
 'use client'
 import CartaoProduto from "@/components/produto/cartaoProduto";
 import Pagina from "@/components/template/pagina";
-import useCarrinho from "@/data/hooks/useCarrinho";
 import produtos from "@/data/constantes/produtos";
 
 
