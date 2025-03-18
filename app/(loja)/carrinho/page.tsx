@@ -1,12 +1,28 @@
 'use client'
-import Pagina from "@/components/template/pagina"   
+import AreaItemCarrinho from "@/components/carrinho/areaItemCarrinho"
+import CarrinhoVazio from "@/components/carrinho/carrinhoVazio"
+import TotalCarrinho from "@/components/carrinho/totalCarrinho"
+import Pagina from "@/components/template/pagina"
+import useCarrinho from "@/data/hooks/useCarrinho"
 
 
-export default function PaginaCarrinnho(){  
-
-    return(
-        <Pagina>
-            carrinho
+export default function PaginaCarrinnho() {
+    const { itens, adicionar, remover } = useCarrinho()
+    return (
+        <Pagina className="flex flex-col gap-10">
+            {itens.length === 0 ? (
+                <CarrinhoVazio />
+            ) : (
+                <div className="flex flex-col gap-5">
+                    {itens.map((item) => (
+                        <AreaItemCarrinho key={item.produto.id}
+                            item={item}
+                            adicionar={(item) => adicionar(item.produto)}
+                            remover={(item) => remover(item.produto)} />
+                    ))}
+                    <TotalCarrinho itens={itens}/>
+                </div>
+            )}
         </Pagina>
     )
 }
